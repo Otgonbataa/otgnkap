@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Нүүр хуудас</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="bg-gray-100 text-blue-800 sticky top-0 z-50">
+        <div class="flex items-center justify-between bg-white p-2">
+            <!-- Desktop -->
+            <div class="hidden md:flex items-center justify-between w-full px-4 sm:mx-20">
+
+                <nav class="flex items-center space-x-6">
+                    <ul class="flex items-center space-x-6">
+                        <li class="flex items-center">
+                            <a href="" class="flex items-center space-x-1 hover:border-b-2 border-blue-800">
+                                <img src="/images/user.png" alt="" class="w-6 h-6 border rounded-full p-1">
+                                <span>Иргэд</span>
+                            </a>
+                        </li>
+                        <li class="flex items-center">
+                            <a href="" class="flex items-center space-x-1">
+                                <img src="/images/work.png" alt="" class="w-6 h-6 border rounded-full p-1">
+                                <span class="text-gray-500 hover:text-blue-800">Байгууллага</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="ml-8 flex items-center space-x-4 text-gray-500">
+                    <input type="text" placeholder="Хайх" class="px-1 py-1">
+                    <img src="/images/search.png" alt="search" class="w-6 h-6 p-1">
+                    <ul class="flex items-center space-x-6 ml-4">
+                        <span>|</span>
+                        <li>
+                            <a href="">Бидний тухай</a>
+                        </li>
+                        <span>|</span>
+                        <li>
+                            <a href="">Салбар нэгж</a>
+                        </li>
+                        <span>|</span>
+                        <li>
+                            <a href="">Шилэн данс</a>
+                        </li>
+                        <span>|</span>
+                        <img src="/images/usa.png" alt="usa" class="w-8 h-8 border rounded">
+                        <img src="/images/mon.png" alt="mon" class="w-8 h-8 border rounded">
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Mobile -->
+            <div class="flex items-center justify-between md:hidden w-full">
+                <div class="md:hidden relative text-sm px-4 flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-500  flex items-center focus:outline-none">
+                        <a href="" class="text-blue-900">Иргэд</a>
+                        <img src="/images/arrowdown.png" alt="" class="w-3 h-3 ml-1">
+                    </button>
+                    <nav id="mobile-menu" class="hidden absolute left-0 mt-56 bg-white shadow-lg rounded z-10">
+                        <ul class="list-none p-2">
+                            <li><a href="" class="block py-1 px-6">Иргэд</a></li>
+                            <li><a href="" class="block py-1 px-6">Байгууллага</a></li>
+                            <li><a href="" class="block py-1 px-6">Бидний тухай</a></li>
+                            <li><a href="" class="block py-1 px-6">Салбар нэгж</a></li>
+                            <li><a href="" class="block py-1 px-6">Шилэн данс</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class=" flex items-center space-x-4">
+                    <a href="" class="flex items-center"><img src="/images/com.png" alt="com" class="w-5 h-5">Интернэт
+                        банк</a>
+                    <img src="/images/usa.png" alt="" class="w-8 h-8 border rounded">
+                    <img src="/images/mon.png" alt="" class="w-8 h-8 border rounded">
+                </div>
+            </div>
+        </div>
+
+        <div class="flex justify-between items-center text-gray-700 p-2 px-4 h-12 sm:ml-20 sm:mr-20 sm:mt-2 sm:h-16">
+            <img src="/images/logo.svg" alt="logo" class="h-10 w-auto">
+
+            <!-- Desktop menu-nuud -->
+            <ul class="hidden md:flex items-center space-x-2 ml-4 mr-4">
+                <li class="relative group">
+                    <a href="" class="block py-1 px-4 focus:outline-none"
+                        onfocus="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                        onblur="this.parentElement.querySelector('ul').classList.add('hidden')"
+                        onmouseenter="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                        onmouseleave="this.parentElement.querySelector('ul').classList.add('hidden')"
+                        tabindex="0">Харилцах</a>
+                    <ul class="absolute left-0 mt-2 w-72 bg-white shadow-lg rounded z-20 hidden"
+                        onmouseenter="this.classList.remove('hidden')" onmouseleave="this.classList.add('hidden')">
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Энгийн харилцах данс</a></li>
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Шилэн дансны үйлчилгээ</a></li>
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Тэтгэврийн харилцах</a></li>
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Хүүхдийн мөнгөний харилцах</a></li>
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Эскроу данс</a></li>
+                    </ul>
+                </li>
+                <li class="relative group">
+                    <a href="" class="block py-1 px-4 focus:outline-none"
+                        onfocus="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                        onblur="this.parentElement.querySelector('ul').classList.add('hidden')"
+                        onmouseenter="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                        onmouseleave="this.parentElement.querySelector('ul').classList.add('hidden')"
+                        tabindex="0">Хадгаламж</a>
+                    <ul
+                        class="absolute left-0 mt-2 w-72 bg-white shadow-lg rounded z-20 group-hover:block group-focus-within:block hidden">
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Хугацаат хадгаламж</a></li>
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Хугацаагүй хадгаламж</a></li>
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Хуримтлалын хадгаламж</a></li>
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Хүүхдийн хадгаламж</a></li>
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Онлайн хадгаламж</a></li>
+                    </ul>
+                </li>
+                <li class="relative group">
+                    <a href="" class="block py-1 px-4 focus:outline-none"
+                        onfocus="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                        onblur="this.parentElement.querySelector('ul').classList.add('hidden')"
+                        onmouseenter="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                        onmouseleave="this.parentElement.querySelector('ul').classList.add('hidden')"
+                        tabindex="0">Зээл</a>
+                    <ul
+                        class="absolute left-0 mt-2 w-72 bg-white shadow-lg rounded z-20 group-hover:block group-focus-within:block hidden">
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Бизнесийн зээл</a></li>
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Хэрэглээний зээл</a></li>
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Орон сууцны зээл</a></li>
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Ногоон зээл</a></li>
+                        <li><a href="#" class="block px-8 py-2 hover:bg-gray-100">Үл хөдлөх хөрөнгө барьцаалсан зээл</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="relative group">
+                    <a href="" class="block py-1 px-4 focus:outline-none"
+                        onfocus="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                        onblur="this.parentElement.querySelector('ul').classList.add('hidden')"
+                        onmouseenter="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                        onmouseleave="this.parentElement.querySelector('ul').classList.add('hidden')"
+                        tabindex="0">Төлбөрийн карт</a>
+                    <ul
+                        class="absolute left-0 mt-2 w-72 bg-white shadow-lg rounded z-20 group-hover:block group-focus-within:block hidden">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Just move</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Дебит карт</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Олон улсын карт</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Кредит карт</a></li>
+
+                    </ul>
+                </li>
+                <li class="relative group">
+                    <a href="" class="block py-1 px-4 focus:outline-none"
+                        onfocus="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                        onblur="this.parentElement.querySelector('ul').classList.add('hidden')"
+                        onmouseenter="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                        onmouseleave="this.parentElement.querySelector('ul').classList.add('hidden')" tabindex="0">Цахим
+                        үйлчилгээ</a>
+                    <ul
+                        class="absolute left-0 mt-2 w-72 bg-white shadow-lg rounded z-20 group-hover:block group-focus-within:block hidden">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Дижитал банк</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">ПОС төхөөрөмжний үйлчилгээ</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Мессеж мэдээ үйлчилгээ</a></li>
+                    </ul>
+                </li>
+                <li class="relative group">
+                    <a href="" class="block py-1 px-4 focus:outline-none"
+                        onfocus="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                        onblur="this.parentElement.querySelector('ul').classList.add('hidden')"
+                        onmouseenter="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                        onmouseleave="this.parentElement.querySelector('ul').classList.add('hidden')"
+                        tabindex="0">Бусад</a>
+                    <ul
+                        class="absolute left-0 mt-2 w-72 bg-white shadow-lg rounded z-20 group-hover:block group-focus-within:block hidden">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Гадаад төлбөр тооцоо</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Даатгалын бүтээгдэхүүн</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Харилцагч банкууд</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Бусад үйлчилгээ</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Цахим брошур</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="" class="flex items-center gap-2 border border-gray-400 rounded-full py-2 px-4 font-bold">
+                        <img src="/images/com.png" alt="" class="w-4">
+                        <span>Дижитал банк</span>
+                    </a>
+                </li>
+            </ul>
+            <!-- Hamburger -->
+            <button id="sidebar-toggle" class="md:hidden flex items-center px-2 py-1 focus:outline-none">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Sidebar -->
+        <div id="sidebar"
+            class="fixed inset-y-0 left-0 w-64 bg-white shadow-lg z-50 transform -translate-x-full transition-transform duration-300 md:hidden">
+            <div class="flex flex-col h-full">
+                <div class="flex items-center justify-between p-4 border-b">
+                    <img src="/images/logo.svg" alt="logo" class="h-10 w-auto">
+                    <button id="sidebar-close" class="text-gray-700 focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <ul class="flex flex-col p-4 space-y-2">
+                    <li><a href="" class="block py-2 px-4 rounded hover:bg-gray-100">Харилцах</a></li>
+                    <li><a href="" class="block py-2 px-4 rounded hover:bg-gray-100">Хадгаламж</a></li>
+                    <li><a href="" class="block py-2 px-4 rounded hover:bg-gray-100">Зээл</a></li>
+                    <li><a href="" class="block py-2 px-4 rounded hover:bg-gray-100">Төлбөрийн карт</a></li>
+                    <li><a href="" class="block py-2 px-4 rounded hover:bg-gray-100">Цахим үйлчилгээ</a></li>
+                    <li><a href="" class="block py-2 px-4 rounded hover:bg-gray-100">Бусад</a></li>
+                    <li>
+                        <a href=""
+                            class="flex items-center gap-2 border border-gray-400 rounded-full py-2 px-4 font-bold mt-2">
+                            <img src="/images/com.png" alt="" class="w-4">
+                            <span>Дижитал банк</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <!-- slide zuaragnuud -->
+        <section id="slider" class="relative overflow-hidden">
+            <div class="slider-images relative w-full h-64 sm:h-96 md:h-[35rem] lg:h-[50rem] xl:h-[44rem]">
+                <img src="/images/slide1.jpg" alt="slide1"
+                    class="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-700">
+                <img src="/images/slide2.jpg" alt="slide2"
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700">
+                <img src="/images/slide3.jpg" alt="slide3"
+                    class="absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-700">
+            </div>
+            <!-- Gar udirdlaga -->
+            <button id="prevSlide"
+                class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-1">&lt;</button>
+            <button id="nextSlide"
+                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-1">&gt;</button>
+        </section>
+
+
+        <!-- Sticky tovchnuud scroll hiih ved hudulguungvi bairlana -->
+        <div class="fixed top-1/3 right-4 z-40 flex flex-col gap-4">
+            <!-- Location button -->
+            <div class="group relative flex flex-col items-end" class="block py-1 px-4 focus:outline-none"
+                onfocus="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                onblur="this.parentElement.querySelector('ul').classList.add('hidden')"
+                onmouseenter="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                onmouseleave="this.parentElement.querySelector('ul').classList.add('hidden')" tabindex="0">
+                <button
+                    class="bg-gray-200 hover:bg-blue-800 text-white rounded-full p-3 shadow-lg flex items-center focus:outline-none">
+                    <img src="/images/loc.png" alt="location" class="w-6 h-6">
+                </button>
+                <ul
+                    class="hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 min-w-[180px] text-gray-700 absolute right-14 top-1/2 -translate-y-1/2 z-50">
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-blue-50 rounded-t-lg">Салбар ATM-н байршил</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Utasnii button -->
+            <div class="group relative flex flex-col items-end" class="block py-1 px-4 focus:outline-none"
+                onfocus="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                onblur="this.parentElement.querySelector('ul').classList.add('hidden')"
+                onmouseenter="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                onmouseleave="this.parentElement.querySelector('ul').classList.add('hidden')" tabindex="0">
+                <button
+                    class="bg-gray-200 hover:bg-blue-800 text-white rounded-full p-3 shadow-lg flex items-center focus:outline-none">
+                    <img src="/images/phone.png" alt="phone" class="w-6 h-6">
+                </button>
+                <ul
+                    class="hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 min-w-[180px] text-gray-700 absolute right-14 top-1/2 -translate-y-1/2 z-50">
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-blue-50 rounded-t-lg">Холбоо барих</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Calculator button -->
+            <div class="group relative flex flex-col items-end" class="block py-1 px-4 focus:outline-none"
+                onfocus="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                onblur="this.parentElement.querySelector('ul').classList.add('hidden')"
+                onmouseenter="this.parentElement.querySelector('ul').classList.remove('hidden')"
+                onmouseleave="this.parentElement.querySelector('ul').classList.add('hidden')" tabindex="0">
+                <button
+                    class="bg-gray-200 hover:bg-blue-800 text-white rounded-full p-3 shadow-lg flex items-center focus:outline-none">
+                    <img src="/images/calc.png" alt="calculator" class="w-6 h-6">
+                </button>
+                <ul
+                    class="hidden group-hover:flex group-focus-within:flex flex-col bg-white shadow-lg rounded-lg mt-2 min-w-[180px] text-gray-700 absolute right-14 top-1/2 -translate-y-1/2 z-50">
+                    <li>
+                        <a href="#" class="block px-4 py-2 hover:bg-blue-50 rounded-t-lg">Тооцоолуур</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Ангилал -->
+        <section class="flex flex-col rounded items-center justify-evenly bg-gray-100 p-4 m-20">
+            <ul
+                class="flex flex-col sm:flex-row flex-wrap text-gray-500 justify-evenly items-center w-full gap-2 sm:gap-0">
+                <li class="flex-1 text-center rounded bg-blue-500 text-white p-2 w-full sm:w-auto"><a href="">Мэдээ
+                        мэдээлэл</a></li>
+                <li class="flex-1 text-center w-full sm:w-auto"><a href="">Хадгаламж</a></li>
+                <li class="flex-1 text-center w-full sm:w-auto"><a href="">Зээл</a></li>
+                <li class="flex-1 text-center w-full sm:w-auto"><a href="">Карт</a></li>
+                <li class="flex-1 text-center w-full sm:w-auto"><a href="">Дижитал банк</a></li>
+            </ul>
+        </section>
+
+        <!-- Онцлох үйлчилгээ -->
+        <section class="rounded grid grid-cols-1 sm:grid-cols-3 gap-4 items-center justify-evenly p-5 m-20">
+            <div class="flex flex-col items-center bg-white rounded shadow p-4">
+                <img src="/images/card1.jpg" alt="card1" class="h-32 object-cover rounded mb-2">
+            </div>
+            <div class="flex flex-col items-center bg-white rounded shadow p-4">
+                <img src="/images/card2.jpg" alt="card2" class="h-32 object-cover rounded mb-2">
+            </div>
+            <div class="flex flex-col items-center bg-white rounded shadow p-4">
+                <img src="/images/card3.jpg" alt="card3" class="h-32 object-cover rounded mb-2">
+            </div>
+        </section>
+
+        <!-- Валютын ханш -->
+        <section class="flex flex-col rounded justify-evenly p-4 mx-4 sm:mx-10 md:mx-20 my-10">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
+                <h1 class="text-red-600 text-xl sm:text-2xl font-bold">Валютын ханш</h1>
+                <span class="flex items-center text-gray-500 text-sm sm:text-base cursor-pointer">
+                    Дэлгэрэнгүй
+                    <img src="/images/arrowr.png" alt="arrow-right" class="w-4 h-4 ml-1">
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div
+                    class="flex flex-col sm:flex-row justify-between items-center bg-gray-100 rounded shadow p-4 gap-4">
+                    <img src="/images/usa.png" alt="usa" class="rounded">
+                    <span class="font-semibold text-base sm:text-lg">USD</span>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-blue-900 text-base sm:text-lg">3566.0</span>
+                        <span class="text-xs text-gray-500">Авах</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-blue-900 text-base sm:text-lg">3592.0</span>
+                        <span class="text-xs text-gray-500">Зарах</span>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col sm:flex-row justify-between items-center bg-gray-100 rounded shadow p-4 gap-4">
+                    <img src="/images/cny.png" alt="cny" class="rounded h-8">
+                    <span class="font-semibold text-base sm:text-lg">CNY</span>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-blue-900 text-base sm:text-lg">492.9</span>
+                        <span class="text-xs text-gray-500">Авах</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-blue-900 text-base sm:text-lg">499.5</span>
+                        <span class="text-xs text-gray-500">Зарах</span>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col sm:flex-row justify-between items-center bg-gray-100 rounded shadow p-4 gap-4">
+                    <img src="/images/krw.png" alt="krw" class="rounded h-8">
+                    <span class="font-semibold text-base sm:text-lg">KRW</span>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-blue-900 text-base sm:text-lg">2.44</span>
+                        <span class="text-xs text-gray-500">Авах</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-blue-900 text-base sm:text-lg">6.67</span>
+                        <span class="text-xs text-gray-500">Зарах</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Картууд -->
+        <section
+            class="rounded bg-gray-100 grid grid-cols-1 sm:grid-cols-2 gap-4 items-center justify-evenly p-4 mx-4 sm:mx-10 md:mx-20 my-10">
+            <!-- Image and arrows -->
+            <div class="flex flex-col items-center p-0 sm:p-4">
+                <img src="/images/card3.jpg" alt="card3"
+                    class="h-40 sm:h-48 md:h-56 lg:h-64 w-auto object-cover rounded mb-4 mt-4 sm:mt-10">
+                <div class="flex justify-center items-center gap-2 mt-2 sm:mt-6">
+                    <button class="focus:outline-none"><img src="/images/backto.png" alt="previous"></button>
+                    <button class="focus:outline-none"><img src="/images/nextto.png" alt="next"></button>
+                </div>
+            </div>
+            <!-- Text and features -->
+            <div class="flex flex-col items-center sm:items-start p-0 sm:p-4">
+                <h1 class="text-blue-800 text-xl sm:text-2xl font-bold mb-2 sm:mb-4 w-full text-center sm:text-left">
+                    Онцлох бүтээгдэхүүн үйлчилгээ</h1>
+                <ul class="flex flex-wrap gap-2 text-gray-500 justify-center sm:justify-start items-center w-full mb-4">
+                    <li>
+                        <a href="" class="border py-1 px-4 rounded-full bg-gray-700 text-white block">Just move</a>
+                    </li>
+                    <li>
+                        <a href="" class="border py-1 px-4 rounded-full block">Дебит карт</a>
+                    </li>
+                    <li>
+                        <a href="" class="border py-1 px-4 rounded-full block">Олон улсын карт</a>
+                    </li>
+                    <li>
+                        <a href="" class="border py-1 px-4 rounded-full block">Кредит карт</a>
+                    </li>
+                </ul>
+                <p class="text-gray-700 mb-4 text-sm sm:text-base">
+                    Та Капитрон банкны JUST MOVE Виза картын эзэмшигч болсноор дэлхийн 210 гаруй улсын банк болон түүний
+                    салбар тооцооны төвүүд, худалдаа үйлчилгээний байгууллагуудаар 24 цагийн турш үйлчлүүлэх
+                    боломжтойгоос гадна хамтрагч байгууллагуудын буцаан олголтын хөтөлбөрт оролцох, гүйлгээний тооноос
+                    хамаарсан дата бонус (урьдчилсан болон хосолсон багцын хэрэглэгчид) үйлчилгээ авах, мөн гэнэтийн
+                    ослын даатгалд хамрагдах болно.
+                </p>
+                <button
+                    class="bg-blue-200 font-bold text-blue-900 py-2 px-6 rounded-full w-full sm:w-auto">Дэлгэрэнгүй</button>
+            </div>
+        </section>
+
+        <section class="w-full px-4 py-8 bg-blue-50">
+            <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-2">
+
+                <!-- Loan Calculator -->
+                <section class="bg-white rounded-2xl shadow-lg border border-blue-200 p-6 md:p-8">
+                    <h2 class="text-2xl font-bold text-blue-900 mb-6 text-center">Зээлийн тооцоолуур</h2>
+                    <form id="loanCalculator" class="space-y-5">
+                        <div>
+                            <label for="amount" class="block text-blue-800 font-semibold mb-1">Зээлийн дүн (₮)</label>
+                            <input type="number" id="amount" name="amount" min="10000" step="1000"
+                                class="w-full border-2 border-blue-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-lg"
+                                required>
+                        </div>
+                        <div>
+                            <label for="interest" class="block text-blue-800 font-semibold mb-1">Жилийн хүү (%)</label>
+                            <input type="number" id="interest" name="interest" min="1" max="50" step="0.01"
+                                class="w-full border-2 border-blue-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-lg"
+                                required>
+                        </div>
+                        <div>
+                            <label for="months" class="block text-blue-800 font-semibold mb-1">Хугацаа (сар)</label>
+                            <input type="number" id="months" name="months" min="1" max="360"
+                                class="w-full border-2 border-blue-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-lg"
+                                required>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-blue-700 to-blue-900 text-white font-bold py-3 rounded-lg hover:from-blue-800 hover:to-blue-950 transform hover:scale-105 transition duration-200 shadow-md">Тооцоолох</button>
+                    </form>
+                    <div id="loanResult"
+                        class="mt-8 text-center text-blue-900 font-semibold text-lg opacity-0 scale-95 transition-all duration-500">
+                    </div>
+                </section>
+
+                <!-- Saving Calculator -->
+                <section class="bg-white rounded-2xl shadow-lg border border-blue-200 p-6 md:p-8">
+                    <h2 class="text-2xl font-bold text-blue-900 mb-6 text-center">Хадгаламжийн тооцоолуур</h2>
+                    <form id="savingCalculator" class="space-y-5">
+                        <div>
+                            <label for="saving-amount" class="block text-blue-800 font-semibold mb-1">Эхний хадгаламж
+                                (₮)</label>
+                            <input type="number" id="saving-amount" name="saving-amount" min="10000" step="1000"
+                                class="w-full border-2 border-blue-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-lg"
+                                required>
+                        </div>
+                        <div>
+                            <label for="saving-interest" class="block text-blue-800 font-semibold mb-1">Жилийн хүү
+                                (%)</label>
+                            <input type="number" id="saving-interest" name="saving-interest" min="1" max="50"
+                                step="0.01"
+                                class="w-full border-2 border-blue-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-lg"
+                                required>
+                        </div>
+                        <div>
+                            <label for="saving-months" class="block text-blue-800 font-semibold mb-1">Хугацаа
+                                (сар)</label>
+                            <input type="number" id="saving-months" name="saving-months" min="1" max="360"
+                                class="w-full border-2 border-blue-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-lg"
+                                required>
+                        </div>
+                        <div>
+                            <label for="saving-add" class="block text-blue-800 font-semibold mb-1">Сар бүр нэмэх дүн
+                                (₮)</label>
+                            <input type="number" id="saving-add" name="saving-add" min="0" step="1000"
+                                class="w-full border-2 border-blue-200 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-400 focus:border-blue-400 text-lg"
+                                value="0">
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-gradient-to-r from-blue-700 to-blue-900 text-white font-bold py-3 rounded-lg hover:from-blue-800 hover:to-blue-950 transform hover:scale-105 transition duration-200 shadow-md">Тооцоолох</button>
+                    </form>
+                    <div id="savingResult"
+                        class="mt-8 text-center text-blue-900 font-semibold text-lg opacity-0 scale-95 transition-all duration-500">
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <script>
+            // Animate input focus for loan calculator
+            document.querySelectorAll('#loanCalculator input').forEach(input => {
+                input.addEventListener('focus', function () {
+                    this.classList.add('ring', 'ring-blue-400', 'scale-105');
+                });
+                input.addEventListener('blur', function () {
+                    this.classList.remove('ring', 'ring-blue-400', 'scale-105');
+                });
+            });
+
+            // Animate result for loan calculator
+            function animateResult(show) {
+                const result = document.getElementById('loanResult');
+                if (show) {
+                    result.classList.remove('opacity-0', 'scale-95');
+                    result.classList.add('opacity-100', 'scale-100');
+                } else {
+                    result.classList.remove('opacity-100', 'scale-100');
+                    result.classList.add('opacity-0', 'scale-95');
+                }
+            }
+
+            document.getElementById('loanCalculator').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const amount = parseFloat(document.getElementById('amount').value);
+                const interest = parseFloat(document.getElementById('interest').value) / 100 / 12;
+                const months = parseInt(document.getElementById('months').value, 10);
+                const resultDiv = document.getElementById('loanResult');
+
+                if (amount > 0 && interest > 0 && months > 0) {
+                    // Аннуитет зээлийн тооцоолол
+                    const monthly = (amount * interest) / (1 - Math.pow(1 + interest, -months));
+                    const total = monthly * months;
+                    resultDiv.innerHTML =
+                        `<span class="block text-2xl font-extrabold text-blue-700 animate-bounce">Сарын төлбөр: <span class="font-bold">${monthly.toLocaleString()} ₮</span></span>
+                        <span class="block mt-3 text-lg animate-fade-in">Нийт төлөх дүн: <span class="font-bold">${total.toLocaleString()} ₮</span></span>`;
+                    animateResult(true);
+                } else {
+                    resultDiv.innerHTML = '<span class="text-red-600 animate-shake">Бүх талбарыг зөв бөглөнө үү.</span>';
+                    animateResult(true);
+                }
+            });
+
+            // Hide loan result on input change
+            document.querySelectorAll('#loanCalculator input').forEach(input => {
+                input.addEventListener('input', () => animateResult(false));
+            });
+
+            // Animate input focus for saving calculator
+            document.querySelectorAll('#savingCalculator input').forEach(input => {
+                input.addEventListener('focus', function () {
+                    this.classList.add('ring', 'ring-blue-400', 'scale-105');
+                });
+                input.addEventListener('blur', function () {
+                    this.classList.remove('ring', 'ring-blue-400', 'scale-105');
+                });
+            });
+
+            // Animate result for saving calculator
+            function animateSavingResult(show) {
+                const result = document.getElementById('savingResult');
+                if (show) {
+                    result.classList.remove('opacity-0', 'scale-95');
+                    result.classList.add('opacity-100', 'scale-100');
+                } else {
+                    result.classList.remove('opacity-100', 'scale-100');
+                    result.classList.add('opacity-0', 'scale-95');
+                }
+            }
+
+            document.getElementById('savingCalculator').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const amount = parseFloat(document.getElementById('saving-amount').value);
+                const interest = parseFloat(document.getElementById('saving-interest').value) / 100 / 12;
+                const months = parseInt(document.getElementById('saving-months').value, 10);
+                const add = parseFloat(document.getElementById('saving-add').value) || 0;
+                const resultDiv = document.getElementById('savingResult');
+
+                if (amount >= 0 && interest > 0 && months > 0 && add >= 0) {
+                    // Compound interest with monthly addition
+                    let total = amount;
+                    for (let i = 0; i < months; i++) {
+                        total = total * (1 + interest) + add;
+                    }
+                    const earned = total - (amount + add * months);
+                    resultDiv.innerHTML =
+                        `<span class="block text-2xl font-extrabold text-blue-700 animate-bounce">Таны хуримтлал: <span class="font-bold">${total.toLocaleString(undefined, { maximumFractionDigits: 0 })} ₮</span></span>
+                        <span class="block mt-3 text-lg animate-fade-in">Нийт хүүгийн орлого: <span class="font-bold">${earned.toLocaleString(undefined, { maximumFractionDigits: 0 })} ₮</span></span>`;
+                    animateSavingResult(true);
+                } else {
+                    resultDiv.innerHTML = '<span class="text-red-600 animate-shake">Бүх талбарыг зөв бөглөнө үү.</span>';
+                    animateSavingResult(true);
+                }
+            });
+
+            // Hide saving result on input change
+            document.querySelectorAll('#savingCalculator input').forEach(input => {
+                input.addEventListener('input', () => animateSavingResult(false));
+            });
+
+            // Custom animations using Tailwind + keyframes
+            const style = document.createElement('style');
+            style.innerHTML = `
+            @keyframes fade-in { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: none; } }
+            .animate-fade-in { animation: fade-in 0.7s ease; }
+            @keyframes shake { 10%, 90% { transform: translateX(-2px); } 20%, 80% { transform: translateX(4px); } 30%, 50%, 70% { transform: translateX(-8px); } 40%, 60% { transform: translateX(8px); } }
+            .animate-shake { animation: shake 0.5s; }
+            `;
+            document.head.appendChild(style);
+        </script>
+
+        <!-- IBAN дансны бүтэц -->
+        <section class="py-32 bg-gradient-to-r from-purple-800 to-blue-800">
+            <div class="max-w-3xl mx-auto bg-white bg-opacity-10 rounded-xl shadow-lg p-8 flex flex-col items-center">
+                <h1 class="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">Таны IBAN Дансны бүтэц</h1>
+                <div class="w-full flex flex-col sm:flex-row items-center justify-center gap-8">
+                    <div class="flex flex-col items-center">
+                        <div class="flex gap-2 mb-2">
+                            <div class="flex flex-col items-center">
+                                <span
+                                    class="bg-blue-700 text-white rounded-full px-4 py-2 font-mono text-lg shadow">MN</span>
+                                <span class="text-xs text-blue-100 mt-1">Улсын код</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <span
+                                    class="bg-blue-700 text-white rounded-full px-4 py-2 font-mono text-lg shadow">**</span>
+                                <span class="text-xs text-blue-100 mt-1">Хяналтын код</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <span
+                                    class="bg-blue-700 text-white rounded-full px-4 py-2 font-mono text-lg shadow">0030</span>
+                                <span class="text-xs text-blue-100 mt-1">Банкны код</span>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <span
+                                    class="bg-blue-700 text-white rounded-full px-6 py-2 font-mono text-lg shadow">00********</span>
+                                <span class="text-xs text-blue-100 mt-1">Дансны дугаар</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Бусад мэдээлэл -->
+        <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 my-16 px-4">
+            <!-- Хүний нөөц -->
+            <div
+                class="bg-white rounded-2xl shadow-lg flex flex-col p-8 hover:shadow-2xl transition-shadow duration-300">
+                <h2 class="text-xl font-bold text-blue-900 mb-2">Хүний нөөц</h2>
+                <p class="text-gray-600 mb-4">Шинийг эрэлхийлэгч, санаачлагч, хариуцлагатай, эрч хүчээр дүүрэн залуус та
+                    бүхэнд манай банкинд ажиллах үүд хаалга үргэлж нээлттэй байх болно.</p>
+                <a href="#" class="text-blue-900 font-semibold hover:underline mt-auto">Дэлгэрэнгүй</a>
+            </div>
+            <!-- Мэдээ мэдээлэл -->
+            <div
+                class="bg-white rounded-2xl shadow-lg flex flex-col p-8 hover:shadow-2xl transition-shadow duration-300">
+                <h2 class="text-xl font-bold text-blue-900 mb-2">Мэдээ мэдээлэл</h2>
+                <p class="text-gray-600 mb-4">Дижитал банк шинэчлэгдлээ. Ухаалаг харилцагч та Капитрон банкны Дижитал
+                    банкаар дамжуулан өөрийн дансаа гар утсаараа удирдан, төлбөр тооцоогоо түргэн шуурхай хийх
+                    боломжтой.</p>
+                <a href="#" class="text-blue-900 font-semibold hover:underline mt-auto">Дэлгэрэнгүй</a>
+            </div>
+            <!-- Түгээмэл асуулт -->
+            <div
+                class="bg-white rounded-2xl shadow-lg flex flex-col p-8 hover:shadow-2xl transition-shadow duration-300">
+                <h2 class="text-xl font-bold text-blue-900 mb-2">Түгээмэл асуулт</h2>
+                <p class="text-gray-600 mb-4">Ухаалаг харилцагч та Капитрон банкны бүтээгдэхүүн үйлчилгээтэй холбоотой
+                    түгээмэл асуултууддаа хариулт аваарай.</p>
+                <a href="#" class="text-blue-900 font-semibold hover:underline mt-auto">Дэлгэрэнгүй</a>
+            </div>
+            <!-- Санал хүсэлт -->
+            <div
+                class="bg-white rounded-2xl shadow-lg flex flex-col p-8 hover:shadow-2xl transition-shadow duration-300">
+                <h2 class="text-xl font-bold text-blue-900 mb-2">Санал хүсэлт</h2>
+                <p class="text-gray-600 mb-4">Ухаалаг харилцагч та Капитрон банкны бүтээгдэхүүн үйлчилгээтэй холбоотой
+                    өөрийн санал хүсэлтээ бидэнд илгээгээрэй.</p>
+                <a href="#" class="text-blue-900 font-semibold hover:underline mt-auto">Дэлгэрэнгүй</a>
+            </div>
+        </section>
+
+        <!-- Онлайн банкны боломжууд -->
+        <section>
+            <div class="max-w-6xl mx-auto px-4">
+                <h1 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-8 text-center">Онлайн банкны боломжууд</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Дижитал банк -->
+                    <div
+                        class="bg-gray-100 rounded-xl shadow p-8 flex flex-col hover:shadow-lg transition-shadow duration-300">
+                        <h2 class="text-xl font-semibold text-blue-800 mb-2">Дижитал банк</h2>
+                        <p class="text-gray-600">
+                            Ухаалаг харилцагч та Капитрон банкны аппликэйшнаар дамжуулан өөрийн дансаа гар утсаараа
+                            удирдан, төлбөр тооцоогоо түргэн шуурхай хийх боломжтой.
+                        </p>
+                    </div>
+                    <!-- Капитрон дижитал банк үйлчилгээ -->
+                    <div
+                        class="bg-gray-100 rounded-xl shadow p-8 flex flex-col hover:shadow-lg transition-shadow duration-300">
+                        <h2 class="text-xl font-semibold text-gray-700 mb-2">Капитрон дижитал банк үйлчилгээ</h2>
+                        <ul class="text-gray-600 list-disc list-inside mb-2 text-left w-full max-w-xs">
+                            <span class="font-semibold">Данс:</span>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>Хугацаатай болон хугацаагүй хадгаламж, харилцах данс нээх</li>
+                                <li>Дансны мэдээлэл авах, үлдэгдэл шалгах, хуулга авах</li>
+                            </ul>
+                            <span class="font-semibold">Зээл:</span>
+                            <ul class="list-disc list-inside ml-4">
+                                <li>Онлайн бичил хэрэглээний зээл авах</li>
+                                <li>Хадгаламж барьцаалсан зээл шинээр болон нэмж авах</li>
+                                <li>Зээлийн үлдэгдэл, зээлжих эрхийн мэдээлэл харах</li>
+                            </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Товч танилцуулга -->
+        <section class=" mt-10 py-16 bg-gradient-to-r from-blue-600 to-blue-900">
+            <div class="max-w-6xl mx-auto px-4 text-white">
+                <p class="mb-4">Товч танилцуулга</p>
+                <h1 class="text-2xl sm:text-3xl font-bold mb-4">Бидний тогтвортой хөгжсөн 24 жилийн өдөр бүр үнэ цэнтэй
+                </h1>
+                <h1 class="text-2xl sm:text-3xl font-bold mb-4">52</h1>
+                <p class="mb-4">Монгол улсын “ТОП – 100” ААН-ийн 52 дэх байгууллагаар тодров</p>
+                <h1 class="text-2xl sm:text-3xl font-bold mb-4">2025</h1>
+                <p class="mb-4">Капитрон Дижитал банк шинэчлэгдлээ</p>
+            </div>
+        </section>
+
+
+        <footer class="pt-12 pb-6">
+            <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+                <div class="text-gray-700">
+                    <h2 class="text-lg text-blue-900 font-bold mb-2">Холбоо барих</h2>
+                    <p class="text-sm mb-2">Сүхбаатар дүүрэг, Усны гудамж - 4, Улаанбаатар-14253, Төв банкны байр</p>
+                    <p class="text-sm mb-2">Лавлах: <a href="tel:18002020"
+                            class="underline hover:text-blue-200">1800-2020</a></p>
+                    <p class="text-sm mb-4">Холбоо барих: <a href="tel:75115555"
+                            class="underline hover:text-blue-200">7511-5555</a></p>
+                    <div class="flex space-x-3 mt-2">
+                        <a href="#"><img src="/images/fb.png" alt="facebook"
+                                class="w-6 h-6 border rounded-full p-1"></a>
+                        <a href="#"><img src="/images/twt.png" alt="twitter"
+                                class="w-6 h-6 border rounded-full p-1"></a>
+                        <a href="#"><img src="/images/yt.png" alt="youtube" class="w-6 h-6 border rounded-full p-1"></a>
+                        <a href="#"><img src="/images/link.png" alt="linkedin"
+                                class="w-6 h-6 border rounded-full p-1"></a>
+                        <a href="#"><img src="/images/insta.png" alt="instagram"
+                                class="w-6 h-6 border rounded-full p-1"></a>
+                        <a href="#"><img src="/images/wtapp.png" alt="whatsapp"
+                                class="w-6 h-6 border rounded-full p-1"></a>
+                    </div>
+                </div>
+                <!-- Digital Bank -->
+                <div class="text-gray-700">
+                    <h2 class="text-lg text-blue-900 font-bold mb-3">Дижитал банк</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:underline">Капитрон Дижитал Банк</a></li>
+                        <li><a href="#" class="hover:underline">КҮБ дансны хуулга</a></li>
+                        <li><a href="#" class="hover:underline">Мессеж мэдээ</a></li>
+                        <li><a href="#" class="hover:underline">Цахим брошур</a></li>
+                        <li><a href="#" class="hover:underline">Лого татах</a></li>
+                    </ul>
+                </div>
+
+                <div class="text-gray-700">
+                    <h2 class="text-lg text-blue-900 font-bold mb-3">Бусад цэс</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:underline">Стратеги тунхаглал</a></li>
+                        <li><a href="#" class="hover:underline">Мэдээ мэдээлэл</a></li>
+                        <li><a href="#" class="hover:underline">Түгээмэл асуулт</a></li>
+                        <li><a href="#" class="hover:underline">Нууцлалын бодлого</a></li>
+                    </ul>
+                </div>
+
+                <div class="text-gray-700">
+                    <h2 class="text-lg text-blue-900 font-bold mb-3">Тусламж</h2>
+                    <ul class="space-y-2 text-sm" style="text-decoration: none;">
+                        <li><a href="#" class="hover:underline" style="text-decoration: none;">Салбар АТМ-н байршил</a>
+                        </li>
+                        <li>Лавлах: <a href="tel:18002020" class="underline hover:text-blue-200"
+                                style="text-decoration: none;">1800-2020</a></li>
+                        <li>Холбоо барих: <a href="tel:75115555" class="underline hover:text-blue-200"
+                                style="text-decoration: none;">7511-5555</a></li>
+                        <li><a href="#" class="hover:underline" style="text-decoration: none;">Аюулгүй байдлын
+                                зөвлөмж</a></li>
+                        <li><a href="#" class="hover:underline" style="text-decoration: none;">Санал хүсэлт</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-100 mt-10 pt-6 flex flex-row items-center justify-start text-center px-20 text-sm text-gray-700 gap-4">
+                <img src="/images/logo.svg" alt="logo" class="h-8">
+                <p class="ml-16">Зохиогчийн эрхийн хуулиар хамгаалагдсан болно. &copy; 2025 Капитрон банк.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Sidebar open/close logic
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarClose = document.getElementById('sidebar-close');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.remove('-translate-x-full');
+        });
+        sidebarClose.addEventListener('click', () => {
+            sidebar.classList.add('-translate-x-full');
+        });
+        // Optional: close sidebar when clicking outside
+        document.addEventListener('click', (e) => {
+            if (
+                !sidebar.contains(e.target) &&
+                !sidebarToggle.contains(e.target) &&
+                !sidebar.classList.contains('-translate-x-full')
+            ) {
+                sidebar.classList.add('-translate-x-full');
+            }
+        });
+    </script>
+
+    <script>
+        const images = document.querySelectorAll('#slider .slider-images img');
+        let current = 0;
+        function showSlide(idx) {
+            images.forEach((img, i) => {
+                img.style.opacity = i === idx ? '1' : '0';
+            });
+        }
+        function nextSlide() {
+            current = (current + 1) % images.length;
+            showSlide(current);
+        }
+        function prevSlide() {
+            current = (current - 1 + images.length) % images.length;
+            showSlide(current);
+        }
+        document.getElementById('nextSlide').onclick = nextSlide;
+        document.getElementById('prevSlide').onclick = prevSlide;
+        setInterval(nextSlide, 3500);
+        showSlide(current);
+    </script>
+    <script>
+        // JavaScript code to handle the mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
